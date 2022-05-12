@@ -68,7 +68,7 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="Classic Long Sleeve T-Shirt"
+            children={home?.address}
             {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
           ></Text>
           <Text
@@ -120,7 +120,7 @@ export default function ActionCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children="$99 USD"
+          children={home?.price}
           {...getOverrideProps(overrides, "$99 USD")}
         ></Text>
         <Button
