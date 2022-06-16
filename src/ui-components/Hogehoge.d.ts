@@ -6,11 +6,8 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { Home } from "../models";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type CommentCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    home?: Home;
-} & {
+import { ViewProps } from "@aws-amplify/ui-react";
+export declare type HogehogeProps = React.PropsWithChildren<Partial<ViewProps> & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function CommentCard(props: CommentCardProps): React.ReactElement;
+export default function Hogehoge(props: HogehogeProps): React.ReactElement;

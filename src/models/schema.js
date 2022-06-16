@@ -24,8 +24,8 @@ export const schema = {
                     "isRequired": false,
                     "attributes": []
                 },
-                "price": {
-                    "name": "price",
+                "priceprice": {
+                    "name": "priceprice",
                     "isArray": false,
                     "type": "Float",
                     "isRequired": false,
@@ -76,5 +76,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "abb6f204998ef8932ab6c6fbd372dbd2"
+    "version": "cefc5c3f94bf88f64948f6485ed0e852"
 };

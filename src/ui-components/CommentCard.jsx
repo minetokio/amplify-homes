@@ -6,11 +6,21 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Home } from "../models";
+import { schema } from "../models/schema";
 import MyIcon from "./MyIcon";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function CommentCard(props) {
-  const { overrides, ...rest } = props;
+  const { home, overrides, ...rest } = props;
+  const authorOnClick = useDataStoreCreateAction({
+    fields: {},
+    model: Home,
+    schema: schema,
+  });
   return (
     <Flex
       gap="16px"
@@ -90,6 +100,7 @@ export default function CommentCard(props) {
           position="relative"
           borderRadius="64px"
           padding="0px 0px 0px 0px"
+          src={home?.image_url}
           {...getOverrideProps(overrides, "image")}
         ></Image>
         <Flex
@@ -141,6 +152,9 @@ export default function CommentCard(props) {
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
                 children="Author"
+                onClick={() => {
+                  authorOnClick();
+                }}
                 {...getOverrideProps(overrides, "Author")}
               ></Text>
               <Text
@@ -222,7 +236,7 @@ export default function CommentCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="“Lorem ipsum dolor sit amet, consectetur adipiscing elit. ”"
+            children={home?.address}
             {...getOverrideProps(
               overrides,
               "\u201CLorem ipsum dolor sit amet, consectetur adipiscing elit. \u201D"

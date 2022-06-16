@@ -6,10 +6,20 @@
 
 /* eslint-disable */
 import React from "react";
-import { getOverrideProps } from "@aws-amplify/ui-react/internal";
+import {
+  getOverrideProps,
+  useDataStoreCreateAction,
+} from "@aws-amplify/ui-react/internal";
+import { Home } from "../models";
+import { schema } from "../models/schema";
 import { Button, Flex, Image, Rating, Text } from "@aws-amplify/ui-react";
 export default function ActionCard(props) {
   const { home, overrides, ...rest } = props;
+  const buttonOnClick = useDataStoreCreateAction({
+    fields: {},
+    model: Home,
+    schema: schema,
+  });
   return (
     <Flex
       gap="0"
@@ -137,6 +147,9 @@ export default function ActionCard(props) {
           isDisabled={false}
           variation="primary"
           children="Primary Button"
+          onClick={() => {
+            buttonOnClick();
+          }}
           {...getOverrideProps(overrides, "Button")}
         ></Button>
       </Flex>
