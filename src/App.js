@@ -1,12 +1,12 @@
 import './App.css';
-import { ActionCardCollection, NavBar, MarketingFooter } from './ui-components'
+import { CommentCardCollection, NavBar, MarketingFooter } from './ui-components'
 function App() {
 return (
 
 
 <div className="App">
 <NavBar />
-<ActionCardCollection  />
+<CommentCardCollection  />
 <MarketingFooter />
 </div>
 

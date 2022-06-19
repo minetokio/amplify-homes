@@ -22,6 +22,7 @@ export { default as CommentCard } from "./CommentCard";
 export { default as Features2x3 } from "./Features2x3";
 export { default as HeroLayout4 } from "./HeroLayout4";
 export { default as ItemCard } from "./ItemCard";
+export { default as CommentCardCollection } from "./CommentCardCollection";
 export { default as SocialPost } from "./SocialPost";
 export { default as HeroLayout3 } from "./HeroLayout3";
 export { default as MyIcon } from "./MyIcon";

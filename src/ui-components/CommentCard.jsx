@@ -6,21 +6,11 @@
 
 /* eslint-disable */
 import React from "react";
-import {
-  getOverrideProps,
-  useDataStoreCreateAction,
-} from "@aws-amplify/ui-react/internal";
-import { Home } from "../models";
-import { schema } from "../models/schema";
+import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import MyIcon from "./MyIcon";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function CommentCard(props) {
   const { home, overrides, ...rest } = props;
-  const authorOnClick = useDataStoreCreateAction({
-    fields: {},
-    model: Home,
-    schema: schema,
-  });
   return (
     <Flex
       gap="16px"
@@ -77,6 +67,7 @@ export default function CommentCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
+            aria-hidden={home?.photoDatetime}
             children="Danny liked this"
             {...getOverrideProps(overrides, "Danny liked this")}
           ></Text>
@@ -100,7 +91,7 @@ export default function CommentCard(props) {
           position="relative"
           borderRadius="64px"
           padding="0px 0px 0px 0px"
-          src={home?.image_url}
+          src={home?.photoDatetime}
           {...getOverrideProps(overrides, "image")}
         ></Image>
         <Flex
@@ -151,10 +142,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="Author"
-                onClick={() => {
-                  authorOnClick();
-                }}
+                children={home?.name}
                 {...getOverrideProps(overrides, "Author")}
               ></Text>
               <Text
@@ -172,7 +160,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="Timestamp"
+                children={home?.place}
                 {...getOverrideProps(overrides, "Timestamp")}
               ></Text>
               <Text
@@ -190,7 +178,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children="Lorem ipsum"
+                children={home?.dispTime}
                 {...getOverrideProps(overrides, "Lorem ipsum")}
               ></Text>
             </Flex>

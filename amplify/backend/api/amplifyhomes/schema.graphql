@@ -2,6 +2,16 @@ type Home @model @auth(rules: [{allow: public}]) {
   id: ID!
   address: String
   image_url: String
-  priceprice: Float
+  price: Float
+}
+
+type Work @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  place: String
+  photoDatetime: AWSDateTime
+  dispTime: String
+  imageUrl: String
+  result: String
 }
  

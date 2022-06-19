@@ -5,12 +5,15 @@
  **************************************************************************/
 
 import React from "react";
-import { Work } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { FlexProps } from "@aws-amplify/ui-react";
-export declare type CommentCardProps = React.PropsWithChildren<Partial<FlexProps> & {
-    home?: Work;
+import { CollectionProps } from "@aws-amplify/ui-react";
+export declare type CommentCardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
+    items?: any[];
+    overrideItems?: ({ item: any, index: number }: {
+        item: any;
+        index: any;
+    }) => Record<string, string>;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
-export default function CommentCard(props: CommentCardProps): React.ReactElement;
+export default function CommentCardCollection(props: CommentCardCollectionProps): React.ReactElement;
