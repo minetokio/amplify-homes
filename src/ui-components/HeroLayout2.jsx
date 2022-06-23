@@ -7,8 +7,7 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Image, View } from "@aws-amplify/ui-react";
-import HeroLayout3 from "./HeroLayout3";
+import { Flex, Image, View } from "@aws-amplify/ui-react";
 export default function HeroLayout2(props) {
   const { overrides, ...rest } = props;
   return (
@@ -31,9 +30,8 @@ export default function HeroLayout2(props) {
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "image")}
       ></Image>
-      <HeroLayout3
-        display="flex"
-        gap="10px"
+      <Flex
+        gap="0"
         position="absolute"
         top="0%"
         bottom="0%"
@@ -45,10 +43,10 @@ export default function HeroLayout2(props) {
         justifyContent="center"
         alignItems="center"
         overflow="hidden"
-        padding="160px 240px 160px 240px"
+        padding="0px 0px 0px 0px"
         backgroundColor="rgba(0,0,0,0.5)"
         {...getOverrideProps(overrides, "HeroLayout3")}
-      ></HeroLayout3>
+      ></Flex>
     </View>
   );
 }

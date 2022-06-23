@@ -1,13 +1,13 @@
 import './App.css';
-import { CommentCardCollection, NavBar, MarketingFooter } from './ui-components'
+import { ListName, NavBar, ListCollection } from './ui-components'
+
 function App() {
 return (
 
-
 <div className="App">
 <NavBar />
-<CommentCardCollection  />
-<MarketingFooter />
+<ListName />
+<ListCollection />
 </div>
 
 
