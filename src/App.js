@@ -1,16 +1,20 @@
 import './App.css';
-import { ListName, ListCollection } from './ui-components'
-
+import { ListName } from './ui-components'
+import {
+    CommentCardCollection
+} from './ui-components';
 function App() {
-return (
+    return (
 
-<div className="App">
-<ListName />
-<ListCollection />
-</div>
+        <div className="App">
+            <div>ListName</div>
+            <ListName />
+            <div>CommentCardCollection</div>
+            <CommentCardCollection />
+        </div>
 
 
-);
+    );
 }
 
 export default App;

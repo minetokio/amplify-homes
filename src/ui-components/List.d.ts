@@ -5,11 +5,11 @@
  **************************************************************************/
 
 import React from "react";
-import { Work } from "../models";
+import { Worker } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type ListProps = React.PropsWithChildren<Partial<FlexProps> & {
-    Home?: Work;
+    Home?: Worker;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

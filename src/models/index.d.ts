@@ -4,12 +4,31 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+type WorkerMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type HomeMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
 type WorkMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class Worker {
+  readonly id: string;
+  readonly originImageDate?: string | null;
+  readonly place?: string | null;
+  readonly name?: string | null;
+  readonly tmpUrl?: string | null;
+  readonly imageUrl?: string | null;
+  readonly similarity?: string | null;
+  readonly dispTime?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Worker, WorkerMetaData>);
+  static copyOf(source: Worker, mutator: (draft: MutableModel<Worker, WorkerMetaData>) => MutableModel<Worker, WorkerMetaData> | void): Worker;
 }
 
 export declare class Home {

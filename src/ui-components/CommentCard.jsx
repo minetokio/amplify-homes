@@ -10,7 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import MyIcon from "./MyIcon";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function CommentCard(props) {
-  const { home, overrides, ...rest } = props;
+  const { worker, overrides, ...rest } = props;
   return (
     <Flex
       gap="16px"
@@ -67,7 +67,7 @@ export default function CommentCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            aria-hidden={home?.photoDatetime}
+            aria-hidden={worker?.photoDatetime}
             children="Danny liked this"
             {...getOverrideProps(overrides, "Danny liked this")}
           ></Text>
@@ -91,7 +91,7 @@ export default function CommentCard(props) {
           position="relative"
           borderRadius="64px"
           padding="0px 0px 0px 0px"
-          src={home?.photoDatetime}
+          src={worker?.imageUrl}
           {...getOverrideProps(overrides, "image")}
         ></Image>
         <Flex
@@ -142,7 +142,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children={home?.name}
+                children={worker?.name}
                 {...getOverrideProps(overrides, "Author")}
               ></Text>
               <Text
@@ -160,7 +160,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children={home?.place}
+                children={worker?.place}
                 {...getOverrideProps(overrides, "Timestamp")}
               ></Text>
               <Text
@@ -178,7 +178,7 @@ export default function CommentCard(props) {
                 position="relative"
                 padding="0px 0px 0px 0px"
                 whiteSpace="pre-wrap"
-                children={home?.dispTime}
+                children={worker?.dispTime}
                 {...getOverrideProps(overrides, "Lorem ipsum")}
               ></Text>
             </Flex>
@@ -224,7 +224,7 @@ export default function CommentCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={home?.address}
+            children={worker?.address}
             {...getOverrideProps(
               overrides,
               "\u201CLorem ipsum dolor sit amet, consectetur adipiscing elit. \u201D"

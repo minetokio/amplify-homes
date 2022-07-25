@@ -1,3 +1,14 @@
+type Worker @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  originImageDate: AWSDateTime
+  place: String
+  name: String
+  tmpUrl: String
+  imageUrl: String
+  similarity: String
+  dispTime: String
+}
+
 type Home @model @auth(rules: [{allow: public}]) {
   id: ID!
   address: String
@@ -13,5 +24,4 @@ type Work @model @auth(rules: [{allow: public}]) {
   dispTime: String
   imageUrl: String
   result: String
-}
- 
+} 
