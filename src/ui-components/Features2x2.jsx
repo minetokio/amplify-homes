@@ -48,7 +48,7 @@ export default function Features2x2(props) {
           <Flex
             gap="16px"
             direction="column"
-            height="318px"
+            width="548px"
             justifyContent="center"
             alignItems="center"
             grow="1"
@@ -105,7 +105,7 @@ export default function Features2x2(props) {
           <Flex
             gap="16px"
             direction="column"
-            height="318px"
+            width="548px"
             justifyContent="center"
             alignItems="center"
             grow="1"
@@ -175,7 +175,7 @@ export default function Features2x2(props) {
           <Flex
             gap="16px"
             direction="column"
-            height="318px"
+            width="548px"
             justifyContent="center"
             alignItems="center"
             grow="1"
@@ -232,7 +232,7 @@ export default function Features2x2(props) {
           <Flex
             gap="16px"
             direction="column"
-            height="318px"
+            width="548px"
             justifyContent="center"
             alignItems="center"
             grow="1"

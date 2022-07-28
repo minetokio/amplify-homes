@@ -34,7 +34,6 @@ export default function NavBar(props) {
         gap="2px"
         direction="row"
         width="fit-content"
-        height="45px"
         justifyContent="center"
         alignItems="center"
         shrink="0"

@@ -22,8 +22,11 @@ export default function CommentCardCollection(props) {
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
-      type="list"
-      direction="column"
+      type="grid"
+      searchPlaceholder="Search..."
+      templateColumns="1fr 1fr 1fr"
+      autoFlow="row"
+      alignItems="stretch"
       justifyContent="stretch"
       items={items || []}
       {...rest}
