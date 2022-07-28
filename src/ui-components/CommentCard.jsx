@@ -359,7 +359,7 @@ export default function CommentCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children="99"
+            children={worker?.similarity}
             {...getOverrideProps(overrides, "9929766897")}
           ></Text>
         </Flex>
