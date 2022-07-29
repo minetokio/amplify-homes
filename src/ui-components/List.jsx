@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function List(props) {
-  const { Home, overrides, ...rest } = props;
+  const { worker, overrides, ...rest } = props;
   return (
     <Flex
       gap="100px"
@@ -30,7 +30,7 @@ export default function List(props) {
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
-        src={Home?.imageUrl}
+        src={worker?.imageUrl}
         {...getOverrideProps(overrides, "onepiece01_luffy 2")}
       ></Image>
       <Text
@@ -49,7 +49,7 @@ export default function List(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={Home?.name}
+        children={worker?.name}
         {...getOverrideProps(overrides, "name")}
       ></Text>
       <Text
@@ -68,7 +68,7 @@ export default function List(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={Home?.dispTime}
+        children={worker?.createdAt}
         {...getOverrideProps(overrides, "Time")}
       ></Text>
       <Text
@@ -87,8 +87,27 @@ export default function List(props) {
         position="relative"
         padding="0px 0px 0px 0px"
         whiteSpace="pre-wrap"
-        children={Home?.place}
+        children={worker?.place}
         {...getOverrideProps(overrides, "Place")}
+      ></Text>
+      <Text
+        fontFamily="Inter"
+        fontSize="24px"
+        fontWeight="400"
+        color="rgba(0,0,0,1)"
+        lineHeight="30px"
+        textAlign="center"
+        display="flex"
+        direction="column"
+        justifyContent="center"
+        width="200px"
+        shrink="0"
+        alignSelf="stretch"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        whiteSpace="pre-wrap"
+        children={worker?.similarity}
+        {...getOverrideProps(overrides, "Similarity")}
       ></Text>
     </Flex>
   );

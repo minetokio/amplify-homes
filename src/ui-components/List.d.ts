@@ -9,7 +9,7 @@ import { Worker } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type ListProps = React.PropsWithChildren<Partial<FlexProps> & {
-    Home?: Worker;
+    worker?: Worker;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

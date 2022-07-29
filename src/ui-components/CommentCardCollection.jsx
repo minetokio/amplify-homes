@@ -6,6 +6,7 @@
 
 /* eslint-disable */
 import React from "react";
+import { SortDirection } from "@aws-amplify/datastore";
 import { Worker } from "../models";
 import {
   getOverrideProps,
@@ -15,19 +16,22 @@ import CommentCard from "./CommentCard";
 import { Collection } from "@aws-amplify/ui-react";
 export default function CommentCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
+  const itemsPagination = {
+    sort: (s) => s.originImageDate(SortDirection.DESCENDING),
+  };
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Worker,
+    pagination: itemsPagination,
   }).items;
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
-      type="grid"
+      type="list"
       searchPlaceholder="Search..."
-      templateColumns="1fr 1fr 1fr"
-      autoFlow="row"
+      direction="column"
       alignItems="stretch"
-      justifyContent="stretch"
+      justifyContent="left"
       items={items || []}
       {...rest}
       {...getOverrideProps(overrides, "CommentCardCollection")}

@@ -6,8 +6,7 @@
 
 /* eslint-disable */
 import React from "react";
-import { SortDirection } from "@aws-amplify/datastore";
-import { Work } from "../models";
+import { Worker } from "../models";
 import {
   getOverrideProps,
   useDataStoreBinding,
@@ -16,18 +15,14 @@ import List from "./List";
 import { Collection } from "@aws-amplify/ui-react";
 export default function ListCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = { sort: (s) => s.dispTime(SortDirection.ASCENDING) };
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
-    model: Work,
-    pagination: itemsPagination,
+    model: Worker,
   }).items;
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
       type="list"
-      isPaginated={true}
-      searchPlaceholder="Search..."
       direction="column"
       justifyContent="stretch"
       items={items || []}
@@ -36,7 +31,7 @@ export default function ListCollection(props) {
     >
       {(item, index) => (
         <List
-          Home={item}
+          worker={item}
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
         ></List>
