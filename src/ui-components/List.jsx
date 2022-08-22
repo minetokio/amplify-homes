@@ -13,7 +13,6 @@ export default function List(props) {
   return (
     <Flex
       gap="100px"
-      direction="row"
       width="1400px"
       justifyContent="center"
       alignItems="center"

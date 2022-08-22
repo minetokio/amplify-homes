@@ -6,45 +6,43 @@
 
 /* eslint-disable */
 import React from "react";
-import { SortDirection } from "@aws-amplify/datastore";
 import { Worker } from "../models";
 import {
   getOverrideProps,
   useDataStoreBinding,
 } from "@aws-amplify/ui-react/internal";
-import List from "./List";
+import SimilarityCard from "./SimilarityCard";
 import { Collection } from "@aws-amplify/ui-react";
-export default function ListCollection(props) {
+export default function SimilarityCardCollection(props) {
   const { items: itemsProp, overrideItems, overrides, ...rest } = props;
-  const itemsPagination = {
-    sort: (s) => s.createdAt(SortDirection.DESCENDING),
-  };
   const itemsDataStore = useDataStoreBinding({
     type: "collection",
     model: Worker,
-    pagination: itemsPagination,
   }).items;
   const items = itemsProp !== undefined ? itemsProp : itemsDataStore;
   return (
     <Collection
-      type="list"
-      isSearchable={true}
+      type="grid"
       isPaginated={true}
       searchPlaceholder="Search..."
-      itemsPerPage={6}
-      direction="column"
+      itemsPerPage={9}
+      templateColumns="1fr 1fr 1fr"
+      autoFlow="row"
       alignItems="stretch"
-      justifyContent="left"
+      justifyContent="stretch"
       items={items || []}
       {...rest}
-      {...getOverrideProps(overrides, "ListCollection")}
+      {...getOverrideProps(overrides, "SimilarityCardCollection")}
     >
       {(item, index) => (
-        <List
+        <SimilarityCard
           worker={item}
+          height="auto"
+          width="auto"
+          margin="0 0 5px 0"
           key={item.id}
           {...(overrideItems && overrideItems({ item, index }))}
-        ></List>
+        ></SimilarityCard>
       )}
     </Collection>
   );

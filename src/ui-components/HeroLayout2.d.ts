@@ -5,9 +5,12 @@
  **************************************************************************/
 
 import React from "react";
+import { Worker } from "../models";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { ViewProps } from "@aws-amplify/ui-react";
 export declare type HeroLayout2Props = React.PropsWithChildren<Partial<ViewProps> & {
+    worker?: Worker;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function HeroLayout2(props: HeroLayout2Props): React.ReactElement;

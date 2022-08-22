@@ -25,7 +25,6 @@ export default function Features4x1(props) {
     >
       <Flex
         gap="24px"
-        direction="row"
         justifyContent="center"
         alignItems="center"
         shrink="0"

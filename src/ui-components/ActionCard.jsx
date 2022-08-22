@@ -14,7 +14,7 @@ import { Home } from "../models";
 import { schema } from "../models/schema";
 import { Button, Flex, Image, Rating, Text } from "@aws-amplify/ui-react";
 export default function ActionCard(props) {
-  const { home, overrides, ...rest } = props;
+  const { worker, overrides, ...rest } = props;
   const buttonOnClick = useDataStoreCreateAction({
     fields: {},
     model: Home,
@@ -39,7 +39,7 @@ export default function ActionCard(props) {
         objectFit="cover"
         position="relative"
         padding="0px 0px 0px 0px"
-        src={home?.image_url}
+        src={worker?.tmpUrl}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
@@ -78,7 +78,7 @@ export default function ActionCard(props) {
             position="relative"
             padding="0px 0px 0px 0px"
             whiteSpace="pre-wrap"
-            children={home?.address}
+            children="Classic Long Sleeve T-Shirt"
             {...getOverrideProps(overrides, "Classic Long Sleeve T-Shirt")}
           ></Text>
           <Text
@@ -105,7 +105,6 @@ export default function ActionCard(props) {
         <Rating
           display="flex"
           gap="8px"
-          direction="row"
           width="174px"
           alignItems="center"
           shrink="0"
@@ -130,13 +129,12 @@ export default function ActionCard(props) {
           position="relative"
           padding="0px 0px 0px 0px"
           whiteSpace="pre-wrap"
-          children={home?.price}
+          children="$99 USD"
           {...getOverrideProps(overrides, "$99 USD")}
         ></Text>
         <Button
           display="flex"
           gap="0"
-          direction="row"
           justifyContent="center"
           alignItems="center"
           shrink="0"

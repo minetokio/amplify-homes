@@ -88,7 +88,6 @@ export default function ProfileCard(props) {
       </Flex>
       <Flex
         gap="16px"
-        direction="row"
         width="fit-content"
         alignItems="flex-start"
         shrink="0"
@@ -128,7 +127,6 @@ export default function ProfileCard(props) {
       <Button
         display="flex"
         gap="0"
-        direction="row"
         justifyContent="center"
         alignItems="center"
         shrink="0"

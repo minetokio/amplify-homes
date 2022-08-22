@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Image, View } from "@aws-amplify/ui-react";
 export default function HeroLayout2(props) {
-  const { overrides, ...rest } = props;
+  const { worker, overrides, ...rest } = props;
   return (
     <View
       width="1440px"
@@ -28,6 +28,7 @@ export default function HeroLayout2(props) {
         right="0%"
         width="100%"
         padding="0px 0px 0px 0px"
+        src={worker?.tmpUrl}
         {...getOverrideProps(overrides, "image")}
       ></Image>
       <Flex
