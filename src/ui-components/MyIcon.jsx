@@ -301,6 +301,36 @@ export default function MyIcon(props) {
       },
       variantValues: { type: "delete" },
     },
+    {
+      overrides: {
+        MyIcon: {
+          paths: [
+            {
+              d: "M14 8L14 0L4 0L4 4L0 4L0 18L8 18L8 14L10 14L10 18L18 18L18 8L14 8ZM4 16L2 16L2 14L4 14L4 16ZM4 12L2 12L2 10L4 10L4 12ZM4 8L2 8L2 6L4 6L4 8ZM8 12L6 12L6 10L8 10L8 12ZM8 8L6 8L6 6L8 6L8 8ZM8 4L6 4L6 2L8 2L8 4ZM12 12L10 12L10 10L12 10L12 12ZM12 8L10 8L10 6L12 6L12 8ZM12 4L10 4L10 2L12 2L12 4ZM16 16L14 16L14 14L16 14L16 16ZM16 12L14 12L14 10L16 10L16 12Z",
+              fill: "rgba(0,0,0,1)",
+              fillRule: "nonzero",
+              style: { transform: "translate(12.5%, 12.5%)" },
+            },
+          ],
+        },
+      },
+      variantValues: { type: "apartment" },
+    },
+    {
+      overrides: {
+        MyIcon: {
+          paths: [
+            {
+              d: "M9.99 0C4.47 0 0 4.48 0 10C0 15.52 4.47 20 9.99 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 9.99 0ZM10 18C5.58 18 2 14.42 2 10C2 5.58 5.58 2 10 2C14.42 2 18 5.58 18 10C18 14.42 14.42 18 10 18ZM10.5 5L9 5L9 11L14.25 14.15L15 12.92L10.5 10.25L10.5 5Z",
+              fill: "rgba(0,0,0,1)",
+              fillRule: "nonzero",
+              style: { transform: "translate(8.33%, 12.5%)" },
+            },
+          ],
+        },
+      },
+      variantValues: { type: "access_time" },
+    },
   ];
   const overrides = mergeVariantsAndOverrides(
     getOverridesFromVariants(variants, props),

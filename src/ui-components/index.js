@@ -6,6 +6,7 @@
 
 export { default as HeroLayout2 } from "./HeroLayout2";
 export { default as StandardCard } from "./StandardCard";
+export { default as Body } from "./Body";
 export { default as SideBar } from "./SideBar";
 export { default as TallCard } from "./TallCard";
 export { default as MarketingPricing } from "./MarketingPricing";
@@ -28,9 +29,11 @@ export { default as Features2x3 } from "./Features2x3";
 export { default as Action } from "./Action";
 export { default as HeroLayout4 } from "./HeroLayout4";
 export { default as ItemCard } from "./ItemCard";
+export { default as Background } from "./Background";
 export { default as SocialPost } from "./SocialPost";
 export { default as HeroLayout3 } from "./HeroLayout3";
 export { default as List } from "./List";
+export { default as FsCommentCardCollection } from "./FsCommentCardCollection";
 export { default as MyIcon } from "./MyIcon";
 export { default as FeaturesText2x2 } from "./FeaturesText2x2";
 export { default as EditProfile } from "./EditProfile";
@@ -41,6 +44,8 @@ export { default as ActionCardCollection } from "./ActionCardCollection";
 export { default as FormCheckout } from "./FormCheckout";
 export { default as HeroLayout1 } from "./HeroLayout1";
 export { default as HomeCard } from "./HomeCard";
+export { default as FsCommentCard } from "./FsCommentCard";
 export { default as Features4x1 } from "./Features4x1";
 export { default as Features2x2 } from "./Features2x2";
+export { default as FsNavBar } from "./FsNavBar";
 export { default as studioTheme } from "./studioTheme";

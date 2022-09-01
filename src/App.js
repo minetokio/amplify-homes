@@ -1,10 +1,12 @@
 import './App.css';
-import { SimilarityCardCollection } from './ui-components'
+import { SimilarityCardCollection,Body, FsCommentCardCollection, FsNavBar } from './ui-components'
 function App() {
     return (
-
         <div className="App">
-            <SimilarityCardCollection />
+            <FsNavBar width={"100vw"}/>
+            <Body width={"100vw"} rightPane={
+                <FsCommentCardCollection  />
+            }/>
         </div>
     );
 }

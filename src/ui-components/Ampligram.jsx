@@ -245,6 +245,7 @@ export default function Ampligram(props) {
           objectFit="cover"
           position="relative"
           padding="16px 16px 16px 16px"
+          children={area}
           {...getOverrideProps(overrides, "Area")}
         >
           <Text
