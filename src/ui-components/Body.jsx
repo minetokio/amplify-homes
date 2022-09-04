@@ -25,14 +25,14 @@ export default function Body(props) {
         width="fit-content"
         alignItems="flex-start"
         shrink="0"
-        height="400px"
+        height="550px"
         position="relative"
         padding="0px 0px 0px 0px"
         {...getOverrideProps(overrides, "leftPane")}
       >
         <Image
-          width="400px"
-          height="400px"
+          width="550px"
+          height="550px"
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -52,9 +52,9 @@ export default function Body(props) {
       >
         {/* <View
           width="1px"
-          height="400px"
+          height="550px"
           grow="1"
-          basis="400px"
+          basis="550px"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "component")}
