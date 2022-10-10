@@ -109,8 +109,11 @@ export default function FsCommentCard(props) {
           </Flex>
         </Flex>
         <Flex
-          gap="16px"
-          alignItems="flex-start"
+          // gap="16px"
+          gap={{ base: "0px", medium: "16px" }}
+          direction={{ base: "column", medium: "row" }}
+          alignItems={{ base: "center", medium: "flex-start" }}
+          // alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
           objectFit="cover"
@@ -133,7 +136,8 @@ export default function FsCommentCard(props) {
             direction="column"
             width="354px"
             grow="1"
-            basis="354px"
+            //basis="354px"
+            basis={{ base: "80px", medium: "354px" }}
             height="80px"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -184,7 +188,8 @@ export default function FsCommentCard(props) {
                 justifyContent="flex-end"
                 alignItems="flex-start"
                 grow="1"
-                basis="209px"
+                basis={{ base: "0px", medium: "209px" }}
+                // basis="209px"
                 height="24px"
                 position="relative"
                 padding="0px 0px 0px 0px"
@@ -228,7 +233,9 @@ export default function FsCommentCard(props) {
           </Flex>
         </Flex>
         <Flex
-          gap="45px"
+          // gap="45px"
+          gap={{ base: "0px", medium: "45px" }}
+          direction={{ base: "column", medium: "row" }}
           alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"

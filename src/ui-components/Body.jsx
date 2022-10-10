@@ -14,6 +14,7 @@ export default function Body(props) {
     <Flex
       gap="10px"
       alignItems="flex-start"
+      justifyContent={{ base: "center", medium: "flex-start" }}
       position="relative"
       padding="10px 10px 10px 10px"
       backgroundColor="rgba(28,143,248,0.3384)"
@@ -22,7 +23,7 @@ export default function Body(props) {
     >
       <Flex
         gap="0"
-        width="fit-content"
+        display={{ base: "none", medium: "flex" }}
         alignItems="flex-start"
         shrink="0"
         height="550px"
