@@ -8,6 +8,8 @@ import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type AmpligramProps = React.PropsWithChildren<Partial<FlexProps> & {
+    area?: React.ReactNode;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function Ampligram(props: AmpligramProps): React.ReactElement;

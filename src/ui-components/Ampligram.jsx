@@ -10,7 +10,7 @@ import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Divider, Flex, Icon, Image, Text, View } from "@aws-amplify/ui-react";
 import MyIcon from "./MyIcon";
 export default function Ampligram(props) {
-  const { overrides, ...rest } = props;
+  const { area, overrides, ...rest } = props;
   return (
     <Flex
       gap="8px"
@@ -247,69 +247,7 @@ export default function Ampligram(props) {
           padding="16px 16px 16px 16px"
           children={area}
           {...getOverrideProps(overrides, "Area")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="700"
-            color="rgba(13,26,38,1)"
-            lineHeight="20px"
-            textAlign="left"
-            display="flex"
-            direction="column"
-            justifyContent="flex-start"
-            shrink="0"
-            alignSelf="stretch"
-            objectFit="cover"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Firstname Lastname"
-            {...getOverrideProps(overrides, "Firstname Lastname")}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="16px"
-            fontWeight="400"
-            color="rgba(48,64,80,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="flex"
-            direction="column"
-            justifyContent="flex-start"
-            letterSpacing="0.01px"
-            shrink="0"
-            alignSelf="stretch"
-            objectFit="cover"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.”"
-            {...getOverrideProps(
-              overrides,
-              "\u201CLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.\u201D"
-            )}
-          ></Text>
-          <Text
-            fontFamily="Inter"
-            fontSize="14px"
-            fontWeight="400"
-            color="rgba(92,102,112,1)"
-            lineHeight="24px"
-            textAlign="left"
-            display="flex"
-            direction="column"
-            justifyContent="flex-start"
-            shrink="0"
-            alignSelf="stretch"
-            objectFit="cover"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="Timestamp"
-            {...getOverrideProps(overrides, "Timestamp")}
-          ></Text>
-        </Flex>
+        ></Flex>
       </Flex>
     </Flex>
   );

@@ -7,14 +7,13 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Image, View } from "@aws-amplify/ui-react";
+import { Flex, Image } from "@aws-amplify/ui-react";
 export default function Body(props) {
-  const { rightPane, worker, overrides, ...rest } = props;
+  const { worker, rightPane, overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
       alignItems="flex-start"
-      justifyContent={{ base: "center", medium: "flex-start" }}
       position="relative"
       padding="10px 10px 10px 10px"
       backgroundColor="rgba(28,143,248,0.3384)"
@@ -23,7 +22,7 @@ export default function Body(props) {
     >
       <Flex
         gap="0"
-        display={{ base: "none", medium: "flex" }}
+        width="fit-content"
         alignItems="flex-start"
         shrink="0"
         height="550px"
@@ -50,17 +49,7 @@ export default function Body(props) {
         padding="0px 0px 0px 0px"
         children={rightPane}
         {...getOverrideProps(overrides, "rightPane")}
-      >
-        {/* <View
-          width="1px"
-          height="550px"
-          grow="1"
-          basis="550px"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "component")}
-        ></View> */}
-      </Flex>
+      ></Flex>
     </Flex>
   );
 }

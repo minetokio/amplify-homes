@@ -108,7 +108,6 @@ export default function FsNavBar(props) {
         <Flex
           gap="10px"
           width="300px"
-          display={{ base: "none", medium: "flex" }}
           justifyContent="flex-end"
           alignItems="center"
           grow="1"

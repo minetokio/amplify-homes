@@ -6,13 +6,14 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { FsCommentCardProps } from "./FsCommentCard";
 import { CollectionProps } from "@aws-amplify/ui-react";
 export declare type FsCommentCardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
     items?: any[];
-    overrideItems?: ({ item: any, index: number }: {
+    overrideItems?: (collectionItem: {
         item: any;
-        index: any;
-    }) => Record<string, string>;
+        index: number;
+    }) => FsCommentCardProps;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
