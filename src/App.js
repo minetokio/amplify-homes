@@ -17,6 +17,12 @@ function App() {
     const doShow = (event) => {
         setTmpImage(event.currentTarget.getAttribute('data-tmp-img'));
     }
+    const doOptionAction = (event) => {
+        console.log('doOptionAction');
+    }
+    const doLinkAction = (event) => {
+        console.log('doLinkAction');
+    }
 
     useEffect(() => {
         const doFilter = (event) => {
@@ -26,14 +32,33 @@ function App() {
 
         DataStore.query(Worker, ob => ob.name("contains", filter), {
             sort:ob=> ob.createdAt(SortDirection.DESCENDING)
-        }).then((values) => {
+        }).then(async (values) => {
             const data = [];
+            // const sTime = {
+            //     totalWorkTime: 'hogehoge',
+            //     totalOverTime: 'hoo'
+            // };
             for (let item of values) {
+                const sTime = await (async (id) => {
+                    if (!!!id) {
+                        return {};
+                    }
+                    const result = await fetch(`https://stime.foresight.co.jp/jaburo/v1/atap/worktime?id=FS00000${id}&target=20221020`, {});
+                    const responseJson = await result.json();
+                    return responseJson.response[0];
+
+                })(item.number);
+
+                sTime.overtimeApplyString = !!sTime.overtimeApplyTime ? '残業申請提出済' : '残業申請未提出';
+
                 data.push(
                     <FsCommentCard
                         key={item.id}
                         item={item}
+                        sTime={sTime}
                         onClick={doShow}
+                        optionAction={doOptionAction}
+                        linkAction={doLinkAction}
                         data-tmp-img={item.tmpUrl}
                     />
                 )
@@ -64,7 +89,7 @@ function App() {
         width: '100%'
     }
     const scrollAreaCss = {
-        minWidth: '625px',
+        minWidth: '510px',
         height: 'calc(100vh - 90px)',
         overflowX: 'hidden',
         overflowY: 'scroll'

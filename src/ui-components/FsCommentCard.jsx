@@ -8,15 +8,21 @@
 import React from "react";
 import {
   getOverrideProps,
-  useDataStoreDeleteAction,
   useStateMutationAction,
 } from "@aws-amplify/ui-react/internal";
-import { Worker } from "../models";
-import { schema } from "../models/schema";
 import MyIcon from "./MyIcon";
 import { Flex, Image, Text } from "@aws-amplify/ui-react";
 export default function FsCommentCard(props) {
-  const { item, overrides, ...rest } = props;
+  const {
+    item,
+    home,
+    aaa,
+    optionAction,
+    linkAction,
+    sTime,
+    overrides,
+    ...rest
+  } = props;
   const [
     fsCommentCardThreeThreeSevenThreeThreeZeroFiveOneBackgroundColor,
     setFsCommentCardThreeThreeSevenThreeThreeZeroFiveOneBackgroundColor,
@@ -31,8 +37,6 @@ export default function FsCommentCard(props) {
       "#FCFCFC"
     );
   };
-  const frameThreeThreeSevenThreeThreeZeroSixFourOnClick =
-    useDataStoreDeleteAction({ id: item?.id, model: Worker, schema: schema });
   return (
     <Flex
       gap="0"
@@ -45,6 +49,7 @@ export default function FsCommentCard(props) {
       <Flex
         gap="16px"
         direction="column"
+        width="fit-content"
         shrink="0"
         position="relative"
         padding="16px 16px 16px 16px"
@@ -103,7 +108,7 @@ export default function FsCommentCard(props) {
               position="relative"
               padding="0px 0px 0px 0px"
               whiteSpace="pre-wrap"
-              children="残業申請提出済"
+              children={sTime?.overtimeApplyString}
               {...getOverrideProps(overrides, "status")}
             ></Text>
           </Flex>
@@ -129,11 +134,10 @@ export default function FsCommentCard(props) {
             {...getOverrideProps(overrides, "image")}
           ></Image>
           <Flex
-            gap="8px"
+            gap="0"
             direction="column"
-            width="354px"
+            width="100%"
             grow="1"
-            basis="354px"
             height="80px"
             position="relative"
             padding="0px 0px 0px 0px"
@@ -146,14 +150,14 @@ export default function FsCommentCard(props) {
               alignSelf="stretch"
               objectFit="cover"
               position="relative"
-              padding="0px 0px 0px 0px"
+              padding="4px 0px 4px 0px"
               {...getOverrideProps(overrides, "Frame33733059")}
             >
               <Flex
                 gap="16px"
-                width="fit-content"
+                width="100%"
                 alignItems="flex-start"
-                shrink="0"
+                grow="1"
                 height="24px"
                 position="relative"
                 padding="0px 0px 0px 0px"
@@ -175,22 +179,19 @@ export default function FsCommentCard(props) {
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
                   children={item?.name}
-                  {...getOverrideProps(overrides, "name")}
+                  {...getOverrideProps(overrides, "name33733061")}
                 ></Text>
               </Flex>
               <Flex
                 gap="0"
-                width="209px"
+                width="fit-content"
                 justifyContent="flex-end"
                 alignItems="flex-start"
-                grow="1"
-                basis="209px"
+                shrink="0"
                 height="24px"
                 position="relative"
                 padding="0px 0px 0px 0px"
-                onClick={() => {
-                  frameThreeThreeSevenThreeThreeZeroSixFourOnClick();
-                }}
+                onClick={optionAction}
                 {...getOverrideProps(overrides, "Frame33733064")}
               >
                 <MyIcon
@@ -205,30 +206,104 @@ export default function FsCommentCard(props) {
                 ></MyIcon>
               </Flex>
             </Flex>
-            <Text
-              fontFamily="Inter"
-              fontSize="16px"
-              fontWeight="400"
-              color="rgba(13,26,38,1)"
-              lineHeight="24px"
-              textAlign="left"
-              display="flex"
-              direction="column"
-              justifyContent="flex-start"
-              letterSpacing="0.01px"
+            <Flex
+              gap="8px"
+              alignItems="flex-start"
               shrink="0"
               alignSelf="stretch"
               objectFit="cover"
               position="relative"
               padding="0px 0px 0px 0px"
-              whiteSpace="pre-wrap"
-              children="--- Phase2 用領域 ---&#xA;--- Phase2 用領域 ---"
-              {...getOverrideProps(overrides, "message")}
-            ></Text>
+              {...getOverrideProps(overrides, "Frame34503029")}
+            >
+              <Text
+                fontFamily="Inter"
+                fontSize="14px"
+                fontWeight="400"
+                color="rgba(13,26,38,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="flex"
+                direction="column"
+                justifyContent="flex-start"
+                letterSpacing="0px"
+                shrink="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children="作業累計:"
+                {...getOverrideProps(overrides, "name34503030")}
+              ></Text>
+              <Text
+                fontFamily="Inter"
+                fontSize="14px"
+                fontWeight="400"
+                color="rgba(13,26,38,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="flex"
+                direction="column"
+                justifyContent="flex-start"
+                letterSpacing="0px"
+                shrink="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children={sTime?.totalWorkTime}
+                {...getOverrideProps(overrides, "name34513035")}
+              ></Text>
+            </Flex>
+            <Flex
+              gap="8px"
+              alignItems="flex-start"
+              shrink="0"
+              alignSelf="stretch"
+              objectFit="cover"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              {...getOverrideProps(overrides, "Frame34503033")}
+            >
+              <Text
+                fontFamily="Inter"
+                fontSize="14px"
+                fontWeight="400"
+                color="rgba(13,26,38,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="flex"
+                direction="column"
+                justifyContent="flex-start"
+                letterSpacing="0px"
+                shrink="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children="時間外累計:"
+                {...getOverrideProps(overrides, "name34503034")}
+              ></Text>
+              <Text
+                fontFamily="Inter"
+                fontSize="14px"
+                fontWeight="400"
+                color="rgba(13,26,38,1)"
+                lineHeight="24px"
+                textAlign="left"
+                display="flex"
+                direction="column"
+                justifyContent="flex-start"
+                letterSpacing="0px"
+                shrink="0"
+                position="relative"
+                padding="0px 0px 0px 0px"
+                whiteSpace="pre-wrap"
+                children={sTime?.totalOverTime}
+                {...getOverrideProps(overrides, "name34513036")}
+              ></Text>
+            </Flex>
           </Flex>
         </Flex>
         <Flex
-          gap="45px"
+          gap="20px"
           alignItems="flex-start"
           shrink="0"
           alignSelf="stretch"
@@ -238,7 +313,7 @@ export default function FsCommentCard(props) {
           {...getOverrideProps(overrides, "Share33733067")}
         >
           <Flex
-            gap="16px"
+            gap="8px"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -277,7 +352,7 @@ export default function FsCommentCard(props) {
             ></Text>
           </Flex>
           <Flex
-            gap="16px"
+            gap="8px"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -316,7 +391,7 @@ export default function FsCommentCard(props) {
             ></Text>
           </Flex>
           <Flex
-            gap="16px"
+            gap="8px"
             width="fit-content"
             alignItems="flex-start"
             shrink="0"
@@ -354,16 +429,28 @@ export default function FsCommentCard(props) {
               {...getOverrideProps(overrides, "similarity")}
             ></Text>
           </Flex>
-          <MyIcon
-            width="24px"
-            height="24px"
+          <Flex
+            gap="8px"
+            width="fit-content"
+            alignItems="flex-start"
             shrink="0"
-            overflow="hidden"
+            height="24px"
             position="relative"
             padding="0px 0px 0px 0px"
-            type="share"
-            {...getOverrideProps(overrides, "MyIcon33733077")}
-          ></MyIcon>
+            onClick={linkAction}
+            {...getOverrideProps(overrides, "Link")}
+          >
+            <MyIcon
+              width="24px"
+              height="24px"
+              shrink="0"
+              overflow="hidden"
+              position="relative"
+              padding="0px 0px 0px 0px"
+              type="share"
+              {...getOverrideProps(overrides, "MyIcon34493027")}
+            ></MyIcon>
+          </Flex>
         </Flex>
       </Flex>
     </Flex>

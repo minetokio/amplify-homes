@@ -1,5 +1,85 @@
 export const schema = {
     "models": {
+        "STime": {
+            "name": "STime",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "number": {
+                    "name": "number",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "totalWorkTime": {
+                    "name": "totalWorkTime",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "totalOverTime": {
+                    "name": "totalOverTime",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "overtimeApplyString": {
+                    "name": "overtimeApplyString",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                },
+                "updatedAt": {
+                    "name": "updatedAt",
+                    "isArray": false,
+                    "type": "AWSDateTime",
+                    "isRequired": false,
+                    "attributes": [],
+                    "isReadOnly": true
+                }
+            },
+            "syncable": true,
+            "pluralName": "STimes",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
         "Worker": {
             "name": "Worker",
             "fields": {
@@ -54,6 +134,13 @@ export const schema = {
                 },
                 "dispTime": {
                     "name": "dispTime",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "number": {
+                    "name": "number",
                     "isArray": false,
                     "type": "String",
                     "isRequired": false,
@@ -271,5 +358,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "f3f288c625bb9f4f0750db8f2fdf70f9"
+    "version": "d10e7c1840797f0c3130e9ebb5baae95"
 };

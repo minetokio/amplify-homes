@@ -1,5 +1,9 @@
 import { ModelInit, MutableModel } from "@aws-amplify/datastore";
 
+type STimeMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type WorkerMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -12,6 +16,18 @@ type WorkMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
 
+export declare class STime {
+  readonly id: string;
+  readonly number?: string | null;
+  readonly totalWorkTime?: string | null;
+  readonly totalOverTime?: string | null;
+  readonly overtimeApplyString?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<STime, STimeMetaData>);
+  static copyOf(source: STime, mutator: (draft: MutableModel<STime, STimeMetaData>) => MutableModel<STime, STimeMetaData> | void): STime;
+}
+
 export declare class Worker {
   readonly id: string;
   readonly originImageDate?: string | null;
@@ -21,6 +37,7 @@ export declare class Worker {
   readonly imageUrl?: string | null;
   readonly similarity?: string | null;
   readonly dispTime?: string | null;
+  readonly number?: string | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
   constructor(init: ModelInit<Worker, WorkerMetaData>);

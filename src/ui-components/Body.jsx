@@ -43,6 +43,7 @@ export default function Body(props) {
       <Flex
         gap="0"
         direction="column"
+        width="fit-content"
         shrink="0"
         alignSelf="stretch"
         position="relative"

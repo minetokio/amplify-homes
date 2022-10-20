@@ -38,7 +38,6 @@ export default function Background(props) {
         height="716px"
         alignItems="flex-start"
         grow="1"
-        basis="716px"
         alignSelf="stretch"
         objectFit="cover"
         position="relative"

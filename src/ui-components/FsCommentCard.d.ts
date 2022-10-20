@@ -6,10 +6,16 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { Worker } from "../models";
+import { STime, Worker } from "../models";
 import { FlexProps } from "@aws-amplify/ui-react";
+import { SyntheticEvent } from "react";
 export declare type FsCommentCardProps = React.PropsWithChildren<Partial<FlexProps> & {
     item?: Worker;
+    home?: String;
+    aaa?: (event: SyntheticEvent) => void;
+    optionAction?: (event: SyntheticEvent) => void;
+    linkAction?: (event: SyntheticEvent) => void;
+    sTime?: STime;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

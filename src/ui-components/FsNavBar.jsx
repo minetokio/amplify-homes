@@ -24,11 +24,10 @@ export default function FsNavBar(props) {
     >
       <Flex
         gap="20px"
-        width="636.67px"
+        width="100%"
         justifyContent="center"
         alignItems="center"
         grow="1"
-        basis="636.6666870117188px"
         height="88px"
         position="relative"
         padding="24px 32px 24px 32px"
@@ -38,6 +37,7 @@ export default function FsNavBar(props) {
         <Flex
           gap="10px"
           direction="column"
+          width="fit-content"
           shrink="0"
           height="39.67px"
           position="relative"
@@ -107,11 +107,10 @@ export default function FsNavBar(props) {
         </Flex>
         <Flex
           gap="10px"
-          width="300px"
+          width="100%"
           justifyContent="flex-end"
           alignItems="center"
           grow="1"
-          basis="300.0000305175781px"
           alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
@@ -141,10 +140,9 @@ export default function FsNavBar(props) {
             >
               <Flex
                 gap="10px"
-                width="302px"
+                width="100%"
                 alignItems="center"
                 grow="1"
-                basis="300px"
                 height="42px"
                 position="relative"
                 border="1px SOLID rgba(255,255,255,1)"
@@ -164,7 +162,6 @@ export default function FsNavBar(props) {
                   justifyContent="flex-start"
                   width="242px"
                   grow="1"
-                  basis="242px"
                   position="relative"
                   padding="0px 0px 0px 0px"
                   whiteSpace="pre-wrap"
@@ -180,7 +177,7 @@ export default function FsNavBar(props) {
                   height="42px"
                   position="relative"
                   border="1px SOLID rgba(255,255,255,1)"
-                  borderRadius="5px"
+                  borderRadius="1px 5px 5px 1px"
                   padding="8px 16px 8px 16px"
                   {...getOverrideProps(overrides, "Button")}
                 >

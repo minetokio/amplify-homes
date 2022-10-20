@@ -47,7 +47,6 @@ export default function SimilarityCard(props) {
         <View
           height="37.5px"
           grow="1"
-          basis="37.5px"
           alignSelf="stretch"
           objectFit="cover"
           overflow="hidden"
@@ -142,7 +141,6 @@ export default function SimilarityCard(props) {
         <View
           height="37.5px"
           grow="1"
-          basis="37.5px"
           alignSelf="stretch"
           objectFit="cover"
           overflow="hidden"
@@ -237,7 +235,6 @@ export default function SimilarityCard(props) {
         <View
           height="37.5px"
           grow="1"
-          basis="37.5px"
           alignSelf="stretch"
           objectFit="cover"
           overflow="hidden"
@@ -352,7 +349,6 @@ export default function SimilarityCard(props) {
         <View
           height="37.5px"
           grow="1"
-          basis="37.5px"
           alignSelf="stretch"
           objectFit="cover"
           overflow="hidden"
