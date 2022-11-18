@@ -7,6 +7,12 @@ import { FsCommentCard, FsNavBar } from './ui-components'
 
 function App() {
     const [dataModels, setDataModels] = useState('');
+    const [masterBD, setMasterBD] = useState(false);
+    useEffect(() => {
+        console.log('useEffect masterBD')
+    },[masterBD]);
+
+
     const [tmpImage, setTmpImage] = useState('');
     const [filterWord, setFilterWord] = useState('');
     const [filter, setFilter] = useState(filterWord);
@@ -29,37 +35,59 @@ function App() {
             setFilter(filterWord);
             setTmpImage('');
         }
+        const fetchSTime = async (id, targetDate) => {
+            if (!!!id || !!!targetDate) {
+                return {};
+            }
+            const result = await fetch(`https://stime.foresight.co.jp/jaburo/v1/atap/worktime?id=FS00000${id}&target=${targetDate}`, {});
+            const responseJson = await result.json();
+            return responseJson.response[0];
+        };
+        const fetchSubordinates = async (id) => {
+            if (!!!id) {
+                return {};
+            }
+            const result = await fetch(`https://stime.foresight.co.jp/jaburo/v1/atap/subordinates/list?id=${id}`, {});
+            const responseJson = await result.json();
+            return responseJson.response;
+        };
 
         DataStore.query(Worker, ob => ob.name("contains", filter), {
             sort:ob=> ob.createdAt(SortDirection.DESCENDING)
         }).then(async (values) => {
+            let _masterBD = masterBD;
+            if (values.length > 0 && !_masterBD) {
+                _masterBD = await fetchSubordinates('FS000007100');
+                setMasterBD(_masterBD);
+            }
+
             const data = [];
-            // const sTime = {
-            //     totalWorkTime: 'hogehoge',
-            //     totalOverTime: 'hoo'
-            // };
             for (let item of values) {
-                const sTime = await (async (id) => {
-                    if (!!!id) {
-                        return {};
+                const itemDate = ((dateTime) => {
+                    const splitData = item?.dispTime?.split(' ');
+                    if (splitData.length !== 2) {
+                        return '';
                     }
-                    const result = await fetch(`https://stime.foresight.co.jp/jaburo/v1/atap/worktime?id=FS00000${id}&target=20221020`, {});
-                    const responseJson = await result.json();
-                    return responseJson.response[0];
+                    return splitData[0].replaceAll('/', '');
+                })(item.dispTime);
 
-                })(item.number);
-
+                const _item = {...item};
+                const sTime = await fetchSTime(item.number, itemDate);
+                const empInfo = _masterBD.find((data) => {
+                    return data.id === sTime.id
+                })
                 sTime.overtimeApplyString = !!sTime.overtimeApplyTime ? '残業申請提出済' : '残業申請未提出';
+                _item.name = (empInfo && empInfo.lastName + ' ' + empInfo.firstName) || _item.name.replace('　', ' ');
 
                 data.push(
                     <FsCommentCard
-                        key={item.id}
-                        item={item}
+                        key={_item.id}
+                        item={_item}
                         sTime={sTime}
                         onClick={doShow}
                         optionAction={doOptionAction}
                         linkAction={doLinkAction}
-                        data-tmp-img={item.tmpUrl}
+                        data-tmp-img={_item.tmpUrl}
                     />
                 )
                 // TODO 初期表示で１つ目の画像を出したいけど、コメントアウト外すとフィルタ条件文字列変更でも１つ目の画像に戻ってしまう
@@ -80,7 +108,7 @@ function App() {
                 </div>
             );
         });
-    }, [filterWord, filter]);
+    }, [filterWord, filter, masterBD]);
 
     const mainAreaCss = {
         display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px'
