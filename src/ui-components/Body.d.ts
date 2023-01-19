@@ -10,7 +10,6 @@ import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
 export declare type BodyProps = React.PropsWithChildren<Partial<FlexProps> & {
     worker?: Worker;
-    rightPane?: React.ReactNode;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

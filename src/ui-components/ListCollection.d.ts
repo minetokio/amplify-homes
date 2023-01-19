@@ -6,14 +6,13 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
-import { ListProps } from "./List";
 import { CollectionProps } from "@aws-amplify/ui-react";
 export declare type ListCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
     items?: any[];
-    overrideItems?: (collectionItem: {
+    overrideItems?: ({ item: any, index: number }: {
         item: any;
-        index: number;
-    }) => ListProps;
+        index: any;
+    }) => Record<string, string>;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

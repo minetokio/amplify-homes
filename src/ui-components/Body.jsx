@@ -7,9 +7,9 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Flex, Image } from "@aws-amplify/ui-react";
+import { Flex, Image, View } from "@aws-amplify/ui-react";
 export default function Body(props) {
-  const { worker, rightPane, overrides, ...rest } = props;
+  const { worker, overrides, ...rest } = props;
   return (
     <Flex
       gap="10px"
@@ -64,7 +64,22 @@ export default function Body(props) {
         padding="0px 0px 0px 0px"
         children={rightPane}
         {...getOverrideProps(overrides, "rightPane")}
-      ></Flex>
+      >
+        <View
+          width="1px"
+          height="unset"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
+          grow="1"
+          shrink="1"
+          basis="0"
+          position="relative"
+          padding="0px 0px 0px 0px"
+          {...getOverrideProps(overrides, "component")}
+        ></View>
+      </Flex>
     </Flex>
   );
 }
