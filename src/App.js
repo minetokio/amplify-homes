@@ -135,7 +135,7 @@ function App() {
         width: '100%'
     }
     const scrollAreaCss = {
-        minWidth: '510px',
+        minWidth: '370px',
         height: 'calc(100vh - 90px)',
         overflowX: 'hidden',
         overflowY: 'scroll'
