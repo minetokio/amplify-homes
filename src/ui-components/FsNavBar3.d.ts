@@ -7,7 +7,11 @@
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
 import { FlexProps } from "@aws-amplify/ui-react";
+import { SyntheticEvent } from "react";
 export declare type FsNavBar3Props = React.PropsWithChildren<Partial<FlexProps> & {
+    doFilter?: (event: SyntheticEvent) => void;
+    filterWord?: String;
+} & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
 export default function FsNavBar3(props: FsNavBar3Props): React.ReactElement;

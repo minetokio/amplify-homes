@@ -7,9 +7,9 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Icon, Text } from "@aws-amplify/ui-react";
+import { Button, Flex, Icon, Text, TextField } from "@aws-amplify/ui-react";
 export default function FsNavBar3(props) {
-  const { overrides, ...rest } = props;
+  const { doFilter, filterWord, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -23,6 +23,18 @@ export default function FsNavBar3(props) {
       {...rest}
       {...getOverrideProps(overrides, "FsNavBar3")}
     >
+      <Icon
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        overflow="hidden"
+        shrink="0"
+        position="relative"
+        padding="0px 0px 0px 0px"
+        type="search"
+        {...getOverrideProps(overrides, "Button Icon")}
+      ></Icon>
       <Flex
         gap="0"
         direction="column"
@@ -34,7 +46,7 @@ export default function FsNavBar3(props) {
         position="relative"
         boxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         padding="0px 0px 0px 0px"
-        {...getOverrideProps(overrides, "FsNavBar36663206")}
+        {...getOverrideProps(overrides, "FsNavBar36713299")}
       >
         <Flex
           gap="20px"
@@ -50,7 +62,7 @@ export default function FsNavBar3(props) {
           position="relative"
           padding="24px 32px 24px 32px"
           backgroundColor="rgba(230,238,254,1)"
-          {...getOverrideProps(overrides, "FsNavBar36663207")}
+          {...getOverrideProps(overrides, "FsNavBar36713300")}
         >
           <Flex
             gap="10px"
@@ -135,99 +147,36 @@ export default function FsNavBar3(props) {
             ></Text>
           </Flex>
           <Flex
-            gap="10px"
+            gap="5px"
             direction="row"
-            width="200px"
+            width="unset"
             height="unset"
-            justifyContent="flex-end"
+            justifyContent="flex-start"
             alignItems="center"
             shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame 321")}
           >
-            <Flex
-              gap="4px"
-              direction="column"
-              width="unset"
-              height="unset"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-              grow="1"
-              shrink="1"
-              basis="0"
-              position="relative"
-              padding="0px 0px 0px 0px"
-              {...getOverrideProps(overrides, "SearchField")}
-            >
-              <Flex
-                gap="0"
-                direction="row"
-                width="unset"
-                height="unset"
-                justifyContent="flex-start"
-                alignItems="flex-start"
-                shrink="0"
-                alignSelf="stretch"
-                position="relative"
-                padding="0px 0px 0px 0px"
-                backgroundColor="rgba(230,238,254,1)"
-                {...getOverrideProps(overrides, "InputGroup")}
-              >
-                <Flex
-                  gap="10px"
-                  direction="row"
-                  width="unset"
-                  height="unset"
-                  justifyContent="center"
-                  alignItems="center"
-                  overflow="hidden"
-                  grow="1"
-                  shrink="1"
-                  basis="0"
-                  alignSelf="stretch"
-                  position="relative"
-                  border="1px SOLID rgba(0,0,0,1)"
-                  borderRadius="5px 1px 1px 5px"
-                  padding="0px 0px 0px 12px"
-                  {...getOverrideProps(overrides, "Input")}
-                >
-                  <Text
-                    fontFamily="Inter"
-                    fontSize="14px"
-                    fontWeight="400"
-                    color="rgba(255,255,255,1)"
-                    lineHeight="21px"
-                    textAlign="left"
-                    display="block"
-                    direction="column"
-                    justifyContent="unset"
-                    width="unset"
-                    height="unset"
-                    gap="unset"
-                    alignItems="unset"
-                    grow="1"
-                    shrink="1"
-                    basis="0"
-                    position="relative"
-                    padding="0px 0px 0px 0px"
-                    whiteSpace="pre-wrap"
-                    children="　"
-                    {...getOverrideProps(overrides, "placeholder")}
-                  ></Text>
-                </Flex>
-                <Button
-                  border="1px SOLID rgba(0,0,0,1)"
-                  borderRadius="1px 5px 5px 1px"
-                  shrink="0"
-                  size="small"
-                  isDisabled={false}
-                  variation="default"
-                  children=""
-                  {...getOverrideProps(overrides, "Button")}
-                ></Button>
-              </Flex>
-            </Flex>
+            <TextField
+              width="211.33px"
+              shrink="0"
+              size="default"
+              isDisabled={false}
+              labelHidden={true}
+              variation="default"
+              data-filterword={filterWord}
+              {...getOverrideProps(overrides, "TextField")}
+            ></TextField>
+            <Button
+              shrink="0"
+              size="large"
+              isDisabled={false}
+              variation="primary"
+              children="検索"
+              onClick={doFilter}
+              {...getOverrideProps(overrides, "Button")}
+            ></Button>
           </Flex>
         </Flex>
       </Flex>
