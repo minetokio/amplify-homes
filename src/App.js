@@ -76,8 +76,13 @@ function App() {
                 const empInfo = _masterBD.find((data) => {
                     return data.id === sTime.id
                 })
+                const date = _item.dispTime.split(' ')[0] || '';
+                const time = _item.dispTime.split(' ')[1] || '';
+                
                 sTime.overtimeApplyString = !!sTime.overtimeApplyTime ? '残業申請提出済' : '残業申請未提出';
+                sTime.overtimeApplyString += date && `(${date})`;
                 _item.name = (empInfo && empInfo.lastName + ' ' + empInfo.firstName) || _item.name.replace('　', ' ');
+                _item.dispTime = time;
 
                 data.push(
                     <FsCommentCard
@@ -98,12 +103,17 @@ function App() {
                 display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px'
             }
             // TODO フィルタは、ヘッダのコンポーネントを使うようにしたい
+            // setDataModels(
+            //     <div>
+            //         <div style={ searchAreaCss }>
+            //             <input type="text" onChange={doChange}></input>
+            //             <button onClick={doFilter}>Filter</button>
+            //         </div>
+            //         {data}
+            //     </div>
+            // );
             setDataModels(
                 <div>
-                    <div style={ searchAreaCss }>
-                        <input type="text" onChange={doChange}></input>
-                        <button onClick={doFilter}>Filter</button>
-                    </div>
                     {data}
                 </div>
             );

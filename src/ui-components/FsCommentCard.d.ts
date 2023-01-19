@@ -13,9 +13,9 @@ export declare type FsCommentCardProps = React.PropsWithChildren<Partial<FlexPro
     item?: Worker;
     home?: String;
     aaa?: (event: SyntheticEvent) => void;
-    optionAction?: (event: SyntheticEvent) => void;
-    linkAction?: (event: SyntheticEvent) => void;
     sTime?: STime;
+    linkAction?: (event: SyntheticEvent) => void;
+    optionAction?: (event: SyntheticEvent) => void;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;

@@ -14,6 +14,10 @@ export default function HomeCard(props) {
     <View
       width="330px"
       height="196px"
+      display="block"
+      gap="unset"
+      alignItems="unset"
+      justifyContent="unset"
       overflow="hidden"
       position="relative"
       padding="0px 0px 0px 0px"
@@ -24,10 +28,15 @@ export default function HomeCard(props) {
       <Image
         width="330px"
         height="144px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
         position="absolute"
         top="33px"
         left="0px"
         padding="0px 0px 0px 0px"
+        objectFit="cover"
         {...getOverrideProps(overrides, "onepiece03_nami 1")}
       ></Image>
     </View>

@@ -16,6 +16,8 @@ export default function Background(props) {
       direction="column"
       width="1029px"
       height="816px"
+      justifyContent="flex-start"
+      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       backgroundColor="rgba(28,143,248,0.3384)"
@@ -23,11 +25,15 @@ export default function Background(props) {
       {...getOverrideProps(overrides, "Background")}
     >
       <View
+        width="unset"
         height="100px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
+        overflow="hidden"
         shrink="0"
         alignSelf="stretch"
-        objectFit="cover"
-        overflow="hidden"
         position="relative"
         padding="0px 0px 0px 0px"
         children={header}
@@ -35,11 +41,15 @@ export default function Background(props) {
       ></View>
       <Flex
         gap="27px"
-        height="716px"
+        direction="row"
+        width="unset"
+        height="unset"
+        justifyContent="flex-start"
         alignItems="flex-start"
         grow="1"
+        shrink="1"
+        basis="0"
         alignSelf="stretch"
-        objectFit="cover"
         position="relative"
         padding="0px 10px 0px 10px"
         {...getOverrideProps(overrides, "body")}
@@ -47,8 +57,12 @@ export default function Background(props) {
         <View
           width="393px"
           height="328px"
-          shrink="0"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "temppic")}
@@ -56,8 +70,12 @@ export default function Background(props) {
         <View
           width="599px"
           height="716px"
-          shrink="0"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
           children={list}

@@ -13,8 +13,10 @@ export default function SimilarityCard(props) {
   return (
     <Flex
       gap="0"
+      direction="row"
       width="465.45px"
       height="150px"
+      justifyContent="flex-start"
       alignItems="flex-start"
       position="relative"
       border="1px SOLID rgba(0,0,0,1)"
@@ -26,10 +28,15 @@ export default function SimilarityCard(props) {
       <Image
         width="139.45px"
         height="150px"
+        display="block"
+        gap="unset"
+        alignItems="unset"
+        justifyContent="unset"
         shrink="0"
         position="relative"
         borderRadius="64px"
         padding="0px 0px 0px 0px"
+        objectFit="cover"
         src={worker?.imageUrl}
         {...getOverrideProps(overrides, "onepiece03_nami 2")}
       ></Image>
@@ -38,6 +45,8 @@ export default function SimilarityCard(props) {
         direction="column"
         width="326px"
         height="150px"
+        justifyContent="flex-start"
+        alignItems="flex-start"
         shrink="0"
         position="relative"
         padding="0px 0px 0px 0px"
@@ -45,11 +54,17 @@ export default function SimilarityCard(props) {
         {...getOverrideProps(overrides, "Body")}
       >
         <View
-          height="37.5px"
-          grow="1"
-          alignSelf="stretch"
-          objectFit="cover"
+          width="unset"
+          height="unset"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          grow="1"
+          shrink="1"
+          basis="0"
+          alignSelf="stretch"
           position="relative"
           border="1px SOLID rgba(0,0,0,1)"
           padding="0px 0px 0px 0px"
@@ -58,16 +73,20 @@ export default function SimilarityCard(props) {
           <View
             width="50px"
             height="37px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
             position="absolute"
             top="0px"
             left="-0.45px"
-            overflow="hidden"
             border="1px SOLID rgba(0,0,0,1)"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "user")}
           >
             <Icon
-              width="33.33349609375px"
+              width="33.33px"
               height="9.25px"
               viewBox={{
                 minX: 0,
@@ -84,6 +103,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="62.5%"
               bottom="12.5%"
@@ -92,8 +115,8 @@ export default function SimilarityCard(props) {
               {...getOverrideProps(overrides, "Vector33493046")}
             ></Icon>
             <Icon
-              width="16.66650390625px"
-              height="12.33331298828125px"
+              width="16.67px"
+              height="12.33px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -109,6 +132,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="12.5%"
               bottom="54.17%"
@@ -122,13 +149,15 @@ export default function SimilarityCard(props) {
             fontSize="12px"
             fontWeight="400"
             color="rgba(0,0,0,1)"
-            lineHeight="14.0625px"
+            lineHeight="14.522727012634277px"
             textAlign="left"
-            display="flex"
+            display="block"
             direction="column"
-            justifyContent="center"
+            justifyContent="unset"
             width="276px"
             height="38px"
+            gap="unset"
+            alignItems="unset"
             position="absolute"
             top="0px"
             left="49.55px"
@@ -139,11 +168,17 @@ export default function SimilarityCard(props) {
           ></Text>
         </View>
         <View
-          height="37.5px"
-          grow="1"
-          alignSelf="stretch"
-          objectFit="cover"
+          width="unset"
+          height="unset"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          grow="1"
+          shrink="1"
+          basis="0"
+          alignSelf="stretch"
           position="relative"
           border="1px SOLID rgba(0,0,0,1)"
           padding="0px 0px 0px 0px"
@@ -154,13 +189,15 @@ export default function SimilarityCard(props) {
             fontSize="12px"
             fontWeight="400"
             color="rgba(0,0,0,1)"
-            lineHeight="14.0625px"
+            lineHeight="14.522727012634277px"
             textAlign="left"
-            display="flex"
+            display="block"
             direction="column"
-            justifyContent="center"
+            justifyContent="unset"
             width="276px"
             height="34px"
+            gap="unset"
+            alignItems="unset"
             position="absolute"
             top="0.5px"
             left="49.55px"
@@ -172,17 +209,21 @@ export default function SimilarityCard(props) {
           <View
             width="50px"
             height="37px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
             position="absolute"
             top="0.5px"
             left="-0.45px"
-            overflow="hidden"
             border="1px SOLID rgba(0,0,0,1)"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "clock")}
           >
             <Icon
-              width="41.66650390625px"
-              height="30.83331298828125px"
+              width="41.67px"
+              height="30.83px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -198,6 +239,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="8.33%"
               bottom="8.33%"
@@ -206,8 +251,8 @@ export default function SimilarityCard(props) {
               {...getOverrideProps(overrides, "Vector33493033")}
             ></Icon>
             <Icon
-              width="8.33349609375px"
-              height="12.33331298828125px"
+              width="8.33px"
+              height="12.33px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -223,6 +268,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="25%"
               bottom="41.67%"
@@ -233,11 +282,17 @@ export default function SimilarityCard(props) {
           </View>
         </View>
         <View
-          height="37.5px"
-          grow="1"
-          alignSelf="stretch"
-          objectFit="cover"
+          width="unset"
+          height="unset"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          grow="1"
+          shrink="1"
+          basis="0"
+          alignSelf="stretch"
           position="relative"
           border="1px SOLID rgba(0,0,0,1)"
           padding="0px 0px 0px 0px"
@@ -246,17 +301,21 @@ export default function SimilarityCard(props) {
           <View
             width="49px"
             height="37px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
             position="absolute"
             top="0px"
             left="0.55px"
-            overflow="hidden"
             border="1px SOLID rgba(0,0,0,1)"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "linkedin")}
           >
             <Icon
               width="24.5px"
-              height="20.04168701171875px"
+              height="20.04px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -272,6 +331,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="33.33%"
               bottom="12.5%"
@@ -280,7 +343,7 @@ export default function SimilarityCard(props) {
               {...getOverrideProps(overrides, "Vector33493041")}
             ></Icon>
             <Icon
-              width="8.16650390625px"
+              width="8.17px"
               height="18.5px"
               viewBox={{ minX: 0, minY: 0, width: 8.16650390625, height: 18.5 }}
               paths={[
@@ -292,6 +355,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="37.5%"
               bottom="12.5%"
@@ -300,8 +367,8 @@ export default function SimilarityCard(props) {
               {...getOverrideProps(overrides, "Vector33493042")}
             ></Icon>
             <Icon
-              width="8.16650390625px"
-              height="6.16668701171875px"
+              width="8.17px"
+              height="6.17px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -317,6 +384,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="8.33%"
               bottom="75%"
@@ -330,13 +401,15 @@ export default function SimilarityCard(props) {
             fontSize="12px"
             fontWeight="400"
             color="rgba(0,0,0,1)"
-            lineHeight="14.0625px"
+            lineHeight="14.522727012634277px"
             textAlign="left"
-            display="flex"
+            display="block"
             direction="column"
-            justifyContent="center"
+            justifyContent="unset"
             width="276px"
             height="38px"
+            gap="unset"
+            alignItems="unset"
             position="absolute"
             top="0px"
             left="49.55px"
@@ -347,11 +420,17 @@ export default function SimilarityCard(props) {
           ></Text>
         </View>
         <View
-          height="37.5px"
-          grow="1"
-          alignSelf="stretch"
-          objectFit="cover"
+          width="unset"
+          height="unset"
+          display="block"
+          gap="unset"
+          alignItems="unset"
+          justifyContent="unset"
           overflow="hidden"
+          grow="1"
+          shrink="1"
+          basis="0"
+          alignSelf="stretch"
           position="relative"
           border="1px SOLID rgba(0,0,0,1)"
           padding="0px 0px 0px 0px"
@@ -362,13 +441,15 @@ export default function SimilarityCard(props) {
             fontSize="12px"
             fontWeight="400"
             color="rgba(0,0,0,1)"
-            lineHeight="14.0625px"
+            lineHeight="14.522727012634277px"
             textAlign="left"
-            display="flex"
+            display="block"
             direction="column"
-            justifyContent="center"
+            justifyContent="unset"
             width="276px"
             height="34px"
+            gap="unset"
+            alignItems="unset"
             position="absolute"
             top="0.5px"
             left="49.55px"
@@ -380,17 +461,21 @@ export default function SimilarityCard(props) {
           <View
             width="50px"
             height="37px"
+            display="block"
+            gap="unset"
+            alignItems="unset"
+            justifyContent="unset"
+            overflow="hidden"
             position="absolute"
             top="0.5px"
             left="-0.45px"
-            overflow="hidden"
             border="1px SOLID rgba(0,0,0,1)"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "thumbs-up")}
           >
             <Icon
-              width="41.00537109375px"
-              height="30.83355712890625px"
+              width="41.01px"
+              height="30.83px"
               viewBox={{
                 minX: 0,
                 minY: 0,
@@ -406,6 +491,10 @@ export default function SimilarityCard(props) {
                   strokeWidth: 2,
                 },
               ]}
+              display="block"
+              gap="unset"
+              alignItems="unset"
+              justifyContent="unset"
               position="absolute"
               top="8.33%"
               bottom="8.33%"

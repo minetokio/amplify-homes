@@ -14,20 +14,16 @@ export default function WorkerCard(props) {
     <Flex
       gap="10px"
       direction="column"
+      width="unset"
+      height="unset"
+      justifyContent="flex-start"
+      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       {...rest}
       {...getOverrideProps(overrides, "WorkerCard")}
     >
-      <View
-        width="375px"
-        height="64px"
-        shrink="0"
-        position="relative"
-        padding="0px 0px 0px 0px"
-        backgroundColor="rgba(9,10,10,1)"
-        {...getOverrideProps(overrides, "Tables")}
-      ></View>
+      <View {...getOverrideProps(overrides, "Tables")}></View>
     </Flex>
   );
 }
