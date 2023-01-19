@@ -140,6 +140,10 @@ function App() {
         overflowX: 'hidden',
         overflowY: 'scroll'
     }
+    const imgAreaCss = {
+        height: 'calc(100vh - 90px)',
+        overflow: 'hidden'
+    }
 
     // TODO img タグは、Amplify Studio で作ったモジュールにしたい
     // TODO img タグは、ある程度の閾値以下のwidth では非表示にしたい
@@ -147,7 +151,9 @@ function App() {
         <div className="App">
             <FsNavBar width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
             <div style={ mainAreaCss }>
-                <img src={tmpImage} style={tmpImageCss} alt=""/>
+                <div style={imgAreaCss}>
+                    <img src={tmpImage} style={tmpImageCss} alt=""/>
+                </div>
                 <div style={scrollAreaCss}>
                     {dataModels}
                 </div>
