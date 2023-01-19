@@ -29,12 +29,14 @@ function App() {
     const doLinkAction = (event) => {
         console.log('doLinkAction');
     }
+    const doFilter = (event) => {
+        // setFilter(filterWord);
+        const inputValue = document.querySelector('[data-filterword]').value
+        setFilter(inputValue);
+        setTmpImage('');
+    }
 
     useEffect(() => {
-        const doFilter = (event) => {
-            setFilter(filterWord);
-            setTmpImage('');
-        }
         const fetchSTime = async (id, targetDate) => {
             if (!!!id || !!!targetDate) {
                 return {};
@@ -52,7 +54,13 @@ function App() {
             return responseJson.response;
         };
 
-        DataStore.query(Worker, ob => ob.name("contains", filter), {
+        const filteredList = masterBD && masterBD.filter((item) => item.lastName.indexOf(filter) > -1 || item.firstName.indexOf(filter) > -1) || [{id: ''}];
+
+        DataStore.query(Worker, ob => ob.or((ob) => {
+            filteredList.map((item) => {
+                ob.number("contains", item.id.slice(-4));
+            });
+        }) , {
             sort:ob=> ob.createdAt(SortDirection.DESCENDING)
         }).then(async (values) => {
             let _masterBD = masterBD;
@@ -121,7 +129,7 @@ function App() {
     }, [filterWord, filter, masterBD]);
 
     const mainAreaCss = {
-        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px'
+        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px', paddingTop: '5px'
     }
     const tmpImageCss = {
         width: '100%'
@@ -137,7 +145,7 @@ function App() {
     // TODO img タグは、ある程度の閾値以下のwidth では非表示にしたい
     return (
         <div className="App">
-            <FsNavBar width={"100vw"} />
+            <FsNavBar width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
             <div style={ mainAreaCss }>
                 <img src={tmpImage} style={tmpImageCss} alt=""/>
                 <div style={scrollAreaCss}>

@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, Icon, SearchField, Text } from "@aws-amplify/ui-react";
 export default function FsNavBar(props) {
-  const { overrides, ...rest } = props;
+  const { doFilter, filterWord, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
@@ -132,6 +132,7 @@ export default function FsNavBar(props) {
           shrink="0"
           position="relative"
           padding="0px 0px 0px 0px"
+          onClick={doFilter}
           {...getOverrideProps(overrides, "Frame 321")}
         >
           <SearchField
@@ -144,6 +145,7 @@ export default function FsNavBar(props) {
             isDisabled={false}
             labelHidden={true}
             variation="default"
+            data-filterword={filterWord}
             {...getOverrideProps(overrides, "SearchField")}
           ></SearchField>
         </Flex>
