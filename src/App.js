@@ -3,7 +3,7 @@ import '@aws-amplify/ui-react/styles.css'
 import { useState, useEffect } from 'react';
 import { DataStore, SortDirection } from 'aws-amplify';
 import { Worker } from './models';
-import { FsCommentCard, FsNavBar } from './ui-components'
+import { FsCommentCard, FsNavBar3 } from './ui-components'
 
 function App() {
     const [dataModels, setDataModels] = useState('');
@@ -101,6 +101,7 @@ function App() {
                         optionAction={doOptionAction}
                         linkAction={doLinkAction}
                         data-tmp-img={_item.tmpUrl}
+                        width={'100%'}
                     />
                 )
                 // TODO 初期表示で１つ目の画像を出したいけど、コメントアウト外すとフィルタ条件文字列変更でも１つ目の画像に戻ってしまう
@@ -129,7 +130,7 @@ function App() {
     }, [filterWord, filter, masterBD]);
 
     const mainAreaCss = {
-        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px', paddingTop: '5px'
+        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px', paddingTop: '10px'
     }
     const tmpImageCss = {
         width: '100%'
@@ -149,7 +150,7 @@ function App() {
     // TODO img タグは、ある程度の閾値以下のwidth では非表示にしたい
     return (
         <div className="App">
-            <FsNavBar width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
+            <FsNavBar3 width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
             <div style={ mainAreaCss }>
                 <div style={imgAreaCss}>
                     <img src={tmpImage} style={tmpImageCss} alt=""/>
