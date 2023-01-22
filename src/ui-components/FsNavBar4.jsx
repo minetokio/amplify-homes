@@ -7,30 +7,32 @@
 /* eslint-disable */
 import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
-import { Button, Flex, Icon, Text, TextField } from "@aws-amplify/ui-react";
-export default function FsNavBar3(props) {
+import { Button, Flex, Icon, TextField } from "@aws-amplify/ui-react";
+export default function FsNavBar4(props) {
   const { doFilter, filterWord, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"
       direction="column"
-      width="640px"
+      width="375px"
       height="unset"
-      justifyContent="center"
-      alignItems="center"
+      justifyContent="flex-start"
+      alignItems="flex-start"
       position="relative"
       padding="0px 0px 0px 0px"
       {...rest}
-      {...getOverrideProps(overrides, "FsNavBar3")}
+      {...getOverrideProps(overrides, "FsNavBar4")}
     >
       <Flex
         gap="20px"
         direction="row"
         width="unset"
-        height="80px"
+        height="unset"
         justifyContent="center"
         alignItems="center"
-        shrink="0"
+        grow="1"
+        shrink="1"
+        basis="0"
         alignSelf="stretch"
         position="relative"
         padding="24px 32px 24px 32px"
@@ -56,7 +58,7 @@ export default function FsNavBar3(props) {
               minX: 0,
               minY: 0,
               width: 36.66650390625,
-              height: 31.66668701171875,
+              height: 31.6666259765625,
             }}
             paths={[
               {
@@ -83,41 +85,6 @@ export default function FsNavBar3(props) {
             position="relative"
             {...getOverrideProps(overrides, "Vector")}
           ></Icon>
-        </Flex>
-        <Flex
-          gap="2px"
-          direction="row"
-          width="unset"
-          height="unset"
-          justifyContent="center"
-          alignItems="center"
-          shrink="0"
-          position="relative"
-          padding="0px 0px 0px 0px"
-          {...getOverrideProps(overrides, "Logo")}
-        >
-          <Text
-            fontFamily="Inter"
-            fontSize="24px"
-            fontWeight="400"
-            color="rgba(0,0,0,1)"
-            textTransform="capitalize"
-            lineHeight="29.045454025268555px"
-            textAlign="left"
-            display="block"
-            direction="column"
-            justifyContent="unset"
-            width="unset"
-            height="unset"
-            gap="unset"
-            alignItems="unset"
-            shrink="0"
-            position="relative"
-            padding="0px 0px 0px 0px"
-            whiteSpace="pre-wrap"
-            children="在席者一覧"
-            {...getOverrideProps(overrides, "\u5728\u5E2D\u8005\u4E00\u89A7")}
-          ></Text>
         </Flex>
         <Flex
           gap="5px"

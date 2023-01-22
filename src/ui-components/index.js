@@ -10,6 +10,7 @@ export { default as Body } from "./Body";
 export { default as SideBar } from "./SideBar";
 export { default as TallCard } from "./TallCard";
 export { default as MarketingPricing } from "./MarketingPricing";
+export { default as FsNavBar4 } from "./FsNavBar4";
 export { default as ListCollection } from "./ListCollection";
 export { default as ReviewCard } from "./ReviewCard";
 export { default as ProductDetail } from "./ProductDetail";

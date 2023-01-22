@@ -77,11 +77,12 @@ export default function FsCommentCard(props) {
         <Flex
           gap="16px"
           direction="row"
-          width="288px"
+          width="unset"
           height="unset"
           justifyContent="flex-start"
           alignItems="flex-start"
           shrink="0"
+          alignSelf="stretch"
           position="relative"
           padding="0px 0px 0px 0px"
           {...getOverrideProps(overrides, "Liked")}
@@ -138,7 +139,7 @@ export default function FsCommentCard(props) {
         <Flex
           gap="16px"
           direction="row"
-          width="288px"
+          width="unset"
           height="unset"
           justifyContent="flex-start"
           alignItems="flex-start"
@@ -165,13 +166,11 @@ export default function FsCommentCard(props) {
           <Flex
             gap="0"
             direction="column"
-            width="unset"
+            width="192px"
             height="unset"
             justifyContent="flex-start"
             alignItems="flex-start"
-            grow="1"
-            shrink="1"
-            basis="0"
+            shrink="0"
             position="relative"
             padding="0px 0px 0px 0px"
             {...getOverrideProps(overrides, "Frame33733058")}
