@@ -3,7 +3,8 @@ import '@aws-amplify/ui-react/styles.css'
 import { useState, useEffect } from 'react';
 import { DataStore, SortDirection } from 'aws-amplify';
 import { Worker } from './models';
-import { FsCommentCard, FsNavBar3 } from './ui-components'
+import { FsCommentCard, FsNavBar3, FsNavBar4 } from './ui-components'
+import { useBreakpointValue } from '@aws-amplify/ui-react';
 
 function App() {
     const [dataModels, setDataModels] = useState('');
@@ -129,17 +130,21 @@ function App() {
         });
     }, [filterWord, filter, masterBD]);
 
+    const isMobile = useBreakpointValue({ base: true, medium: false });
+
     const mainAreaCss = {
-        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px', paddingTop: '10px'
+        display: 'grid', gridTemplateColumns: '3fr 1fr', columnGap: '10px'
     }
     const tmpImageCss = {
         width: '100%'
     }
+
     const scrollAreaCss = {
         minWidth: '370px',
         height: 'calc(100vh - 90px)',
         overflowX: 'hidden',
-        overflowY: 'scroll'
+        overflowY: 'scroll',
+        width: isMobile ? '100vw' : '100%'
     }
     const imgAreaCss = {
         height: 'calc(100vh - 90px)',
@@ -150,11 +155,18 @@ function App() {
     // TODO img タグは、ある程度の閾値以下のwidth では非表示にしたい
     return (
         <div className="App">
-            <FsNavBar3 width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
+            {
+                isMobile ?
+                <FsNavBar4 width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
+                :
+                <FsNavBar3 width={"100vw"} filterWord={filterWord} doFilter={doFilter}/>
+            }
             <div style={ mainAreaCss }>
-                <div style={imgAreaCss}>
-                    <img src={tmpImage} style={tmpImageCss} alt=""/>
-                </div>
+                {!isMobile &&
+                    <div style={imgAreaCss}>
+                        <img src={tmpImage} style={tmpImageCss} alt=""/>
+                    </div>
+                }
                 <div style={scrollAreaCss}>
                     {dataModels}
                 </div>
