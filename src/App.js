@@ -5,6 +5,7 @@ import { DataStore, SortDirection } from 'aws-amplify';
 import { Worker } from './models';
 import { FsCommentCard, FsNavBar3, FsNavBar4 } from './ui-components'
 import { useBreakpointValue } from '@aws-amplify/ui-react';
+let isNotCleared = true;
 
 function App() {
     const [dataModels, setDataModels] = useState('');
@@ -37,7 +38,12 @@ function App() {
         setTmpImage('');
     }
 
-    useEffect(() => {
+    useEffect(async () => {
+        if (isNotCleared) {
+            isNotCleared = false;
+            await DataStore.clear();
+        }
+
         const fetchSTime = async (id, targetDate) => {
             if (!!!id || !!!targetDate) {
                 return {};
