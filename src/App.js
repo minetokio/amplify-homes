@@ -116,6 +116,7 @@ function App() {
                         linkAction={doLinkAction}
                         data-tmp-img={_item.tmpUrl}
                         width={'100%'}
+                        className='fs-comment-card'
                     />
                 )
                 // TODO 初期表示で１つ目の画像を出したいけど、コメントアウト外すとフィルタ条件文字列変更でも１つ目の画像に戻ってしまう
