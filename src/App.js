@@ -15,7 +15,7 @@ function App() {
     },[masterBD]);
 
 
-    const [tmpImage, setTmpImage] = useState('');
+    const [tmpImage, setTmpImage] = useState({});
     const [filterWord, setFilterWord] = useState('');
     const [filter, setFilter] = useState(filterWord);
 
@@ -23,7 +23,14 @@ function App() {
         setFilterWord(event.target.value);
     }
     const doShow = (event) => {
-        setTmpImage(event.currentTarget.getAttribute('data-tmp-img'));
+        setTmpImage({
+            height: 'calc(100vh - 90px)',
+            overflow: 'hidden',
+            backgroundImage: `url(${event.currentTarget.getAttribute('data-tmp-img')})`,
+            backgroundSize: 'contain',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
+        });
     }
     const doOptionAction = (event) => {
         console.log('doOptionAction');
@@ -35,7 +42,7 @@ function App() {
         // setFilter(filterWord);
         const inputValue = document.querySelector('[data-filterword]').value
         setFilter(inputValue);
-        setTmpImage('');
+        setTmpImage({});
     }
 
     useEffect(async () => {
@@ -169,9 +176,7 @@ function App() {
             }
             <div style={ mainAreaCss }>
                 {!isMobile &&
-                    <div style={imgAreaCss}>
-                        <img src={tmpImage} style={tmpImageCss} alt=""/>
-                    </div>
+                    <div style={tmpImage}></div>
                 }
                 <div style={scrollAreaCss}>
                     {dataModels}
