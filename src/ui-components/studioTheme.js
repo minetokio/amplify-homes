@@ -1438,13 +1438,13 @@ export default createTheme({
   },
   breakpoints: {
     values: {
-      base: { value: "0" },
-      small: { value: "480" },
-      medium: { value: "768" },
-      large: { value: "992" },
-      xl: { value: "1280" },
-      xxl: { value: "1536" },
+      base: 0,
+      small: 480,
+      medium: 768,
+      large: 992,
+      xl: 1280,
+      xxl: 1536,
     },
-    defaultBreakpoint: { value: "base" },
+    defaultBreakpoint: "base",
   },
 });

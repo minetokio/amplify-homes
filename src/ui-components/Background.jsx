@@ -9,7 +9,7 @@ import React from "react";
 import { getOverrideProps } from "@aws-amplify/ui-react/internal";
 import { Flex, View } from "@aws-amplify/ui-react";
 export default function Background(props) {
-  const { overrides, ...rest } = props;
+  const { header, list, overrides, ...rest } = props;
   return (
     <Flex
       gap="0"

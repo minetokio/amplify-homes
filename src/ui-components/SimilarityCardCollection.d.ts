@@ -6,13 +6,14 @@
 
 import React from "react";
 import { EscapeHatchProps } from "@aws-amplify/ui-react/internal";
+import { SimilarityCardProps } from "./SimilarityCard";
 import { CollectionProps } from "@aws-amplify/ui-react";
 export declare type SimilarityCardCollectionProps = React.PropsWithChildren<Partial<CollectionProps<any>> & {
     items?: any[];
-    overrideItems?: ({ item: any, index: number }: {
+    overrideItems?: (collectionItem: {
         item: any;
-        index: any;
-    }) => Record<string, string>;
+        index: number;
+    }) => SimilarityCardProps;
 } & {
     overrides?: EscapeHatchProps | undefined | null;
 }>;
